@@ -1,5 +1,6 @@
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { Route } from '@angular/router';
+import {MenuNotificationComponent} from "./menu-notification-component/menu-notification.component";
 
 export const appRoutes: Route[] = [
   {
@@ -9,10 +10,10 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'ara-menu',
-    loadChildren: () => import('ara-menu/Routes').then((m) => m.remoteRoutes),
+    loadComponent: () => import('ara-menu/Component').then((m) => m.MenuComponent),
   },
   {
     path: '',
-    component: NxWelcomeComponent,
+    component: MenuNotificationComponent,
   },
 ];
